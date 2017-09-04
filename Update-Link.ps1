@@ -4,43 +4,73 @@ param(
     [string]$Path,
 
     [Parameter()]
+    [ValidateSet('Hard','Medium','Soft')]
+    [string]$Contrast = 'Medium',
+
+    [Parameter()]
     [ValidateSet('Light','Dark')]
-    [string]$Theme = 'Dark'
+    [string]$Palette = 'Dark'
 )
 
 $lnk = & ("$PSScriptRoot\Get-Link.ps1") $Path
 
-# Set Common Solarized Colors
-$lnk.ConsoleColors[0]="#002b36"
-$lnk.ConsoleColors[8]="#073642"
-$lnk.ConsoleColors[2]="#586e75"
-$lnk.ConsoleColors[6]="#657b83"
-$lnk.ConsoleColors[1]="#839496"
-$lnk.ConsoleColors[3]="#93a1a1"
-$lnk.ConsoleColors[7]="#eee8d5"
-$lnk.ConsoleColors[15]="#fdf6e3"
-$lnk.ConsoleColors[14]="#b58900"
-$lnk.ConsoleColors[4]="#cb4b16"
-$lnk.ConsoleColors[12]="#dc322f"
-$lnk.ConsoleColors[13]="#d33682"
-$lnk.ConsoleColors[5]="#6c71c4"
-$lnk.ConsoleColors[9]="#268bd2"
-$lnk.ConsoleColors[11]="#2aa198"
-$lnk.ConsoleColors[10]="#859900"
-
-# Set Light/Dark Theme-Specific Colors
-if ($Theme -eq "Dark") {
+# Set Light/Dark Palette and Contrast-Specific Colors
+if ($Palette -eq "Dark") {
+    if ($Contrast -eq "Hard") {
+        $lnk.ConsoleColors[0] ="#1d2021"
+    } elseif ($Contrast -eq "Soft") {
+        $lnk.ConsoleColors[0] ="#32302f"
+    } else {
+        $lnk.ConsoleColors[0] ="#282828"
+    }
+    $lnk.ConsoleColors[1] ="#458588"
+    $lnk.ConsoleColors[2] ="#98971a"
+    $lnk.ConsoleColors[3] ="#689d6a"
+    $lnk.ConsoleColors[4] ="#cc241d"
+    $lnk.ConsoleColors[5] ="#b16286"
+    $lnk.ConsoleColors[6] ="#d79921"
+    $lnk.ConsoleColors[7] ="#a89984"
+    $lnk.ConsoleColors[8] ="#928374"
+    $lnk.ConsoleColors[9] ="#83a598"
+    $lnk.ConsoleColors[10]="#b8bb26"
+    $lnk.ConsoleColors[11]="#8ec07c"
+    $lnk.ConsoleColors[12]="#fb4934"
+    $lnk.ConsoleColors[13]="#d3869b"
+    $lnk.ConsoleColors[14]="#fabd2f"
+    $lnk.ConsoleColors[15]="#ebdbb2"
     $lnk.PopUpBackgroundColor=0xf
-    $lnk.PopUpTextColor=0x6
+    $lnk.PopUpTextColor=0x0
     $lnk.ScreenBackgroundColor=0x0
-    $lnk.ScreenTextColor=0x1
+    $lnk.ScreenTextColor=0xf
 } else {
-    $lnk.PopUpBackgroundColor=0x0
-    $lnk.PopUpTextColor=0x1
-    $lnk.ScreenBackgroundColor=0xf
-    $lnk.ScreenTextColor=0x6
+    if ($Contrast -eq "Hard") {
+        $lnk.ConsoleColors[0] ="#f9f5d7"
+    } elseif ($Contrast -eq "Soft") {
+        $lnk.ConsoleColors[0] ="#f2e5bc"
+    } else {
+        $lnk.ConsoleColors[0] ="#fbf1c7"
+    }
+    $lnk.ConsoleColors[1] ="#458588"
+    $lnk.ConsoleColors[2] ="#98971a"
+    $lnk.ConsoleColors[3] ="#689d6a"
+    $lnk.ConsoleColors[4] ="#cc241d"
+    $lnk.ConsoleColors[5] ="#b16286"
+    $lnk.ConsoleColors[6] ="#d79921"
+    $lnk.ConsoleColors[7] ="#7c6f64"
+    $lnk.ConsoleColors[8] ="#928374"
+    $lnk.ConsoleColors[9] ="#076678"
+    $lnk.ConsoleColors[10]="#79740e"
+    $lnk.ConsoleColors[11]="#427b58"
+    $lnk.ConsoleColors[12]="#9d0006"
+    $lnk.ConsoleColors[13]="#8f3f71"
+    $lnk.ConsoleColors[14]="#b57614"
+    $lnk.ConsoleColors[15]="#3c3836"
+    $lnk.PopUpBackgroundColor=0xf
+    $lnk.PopUpTextColor=0x0
+    $lnk.ScreenBackgroundColor=0x0
+    $lnk.ScreenTextColor=0xf
 }
 
 $lnk.Save()
 
-Write-Host "Updated $Path to Solarized - $Theme"
+Write-Host "Updated $Path to $Contrast $Palette Gruvbox"
