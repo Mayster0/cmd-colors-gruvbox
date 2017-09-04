@@ -132,8 +132,8 @@ Screenshots
 [6]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/windows-old-defaults.png
 [7]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/windows-new-default.png
 [8]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-dark-hard.png
-[9]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-medium-hard.png
-[10]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-soft-hard.png
-[11]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-dark-light.png
-[12]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-medium-light.png
-[13]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-soft-light.png
+[9]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-dark-medium.png
+[10]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-dark-soft.png
+[11]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-light-dark.png
+[12]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-light-medium.png
+[13]: https://raw.github.com/bambocher/cmd-colors-gruvbox/master/gruvbox-light-soft.png
